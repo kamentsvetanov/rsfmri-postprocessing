@@ -1,7 +1,11 @@
 function [SS]  = kat_fmri_postprocessing_GLM(SS)
 
 % function [SS] = kat_fmri_postprocessing_GLM(SS);
-% Heavily based on Rik's GLM processing function (https://github.com/MRC-CBU/riksneurotools/blob/master/GLM/glm.m)
+% % Originally based on GLM code by Rik Henson (MRC CBU):
+% https://github.com/MRC-CBU/riksneurotools/blob/master/GLM/glm.m
+%
+% Subsequently extended to more flexible nuisance regression, temporal filtering, RSFA and functional
+% connectivity analyses.
 %
 % Function (using SPM8 functions) for estimating linear regressions
 % between fMRI timeseries in each pair of Nr ROIs, adjusting for bandpass
