@@ -1,18 +1,14 @@
 function [SS]  = kat_fmri_postprocessing_GLM(SS)
 
 % function [SS] = kat_fmri_postprocessing_GLM(SS);
-% Heavily based on Rik's GLM processing function
-%
-% [Zmat, Bmat, pZmat, pBmat, aY, X0r] = rsfMRI_GLM(S);
+% Heavily based on Rik's GLM processing function (https://github.com/MRC-CBU/riksneurotools/blob/master/GLM/glm.m)
 %
 % Function (using SPM8 functions) for estimating linear regressions
 % between fMRI timeseries in each pair of Nr ROIs, adjusting for bandpass
 % filter, confounding timeseries (eg CSF) and (SVD of) various expansions of
 % movement parameters, and properly modelling dfs based on comprehensive
 % model of error autocorrelation.
-%
-% rik.henson@mrc-cbu.cam.ac.uk, Jan 2013
-% Many thanks to Linda Geerligs for pointing out improvements!
+
 %
 % S.Y = [Ns x Nr] data matrix, where Ns = number of scans (ie resting-state fMRI timeseries) and Nr = number of ROIs
 % S.M = [Ns x 6] matrix of 6 movement parameters from realignment (x,y,z,pitch,roll,yaw)
